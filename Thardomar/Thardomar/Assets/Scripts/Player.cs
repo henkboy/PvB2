@@ -5,39 +5,38 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    // Movement
+    private float Speed;
+    public float WalkSpeed;
+    public float SprintSpeed;
+    public float TurnSpeed;
+
+    // Attacking
+    public GameObject Enemy;
+    public GameObject EndBoss;
+
     // Health
     public float CurrentHealth;
     public float MaxHealth;
     public Slider healthSlider;
     public GameObject Restart;
 
-    // Movement
-    private float Speed;
-    public float WalkSpeed;
-    public float SprintSpeed;
-    public Rigidbody rb;
-
-    // Attacking
-    public GameObject SpawnPos;
-    public GameObject EndBoss;
-
     // Collectibles
-    public Text Collectibles;
-    private int m_Collectible;
-    public int Collectible
+    public Text MoneyUI;
+    private int i_money;
+    public int Money
     {
-        get { return m_Collectible; }
+        get { return i_money; }
         set
         {
-            if (m_Collectible == value)
+            if (i_money == value)
                 return;
 
-            m_Collectible = value;
-            Collectibles.text = "Collectibles: " + m_Collectible + "/8";
+            i_money = value;
+            MoneyUI.text = "Money: " + i_money;
         }
     }
 
-    private AudioSource JumpSound;
     private Animator Anim;
 
     void Start()
@@ -63,19 +62,23 @@ public class Player : MonoBehaviour
             Speed = WalkSpeed;
         }
 
-        float translationX = Input.GetAxis("Horizontal") * Speed;
         float translationZ = Input.GetAxis("Vertical") * Speed;
-
-        translationX *= Time.deltaTime;
         translationZ *= Time.deltaTime;
+        transform.Translate(0, 0, translationZ);
 
-        transform.Translate(translationX, 0, translationZ);
+        transform.Rotate(0, Input.GetAxis("Rotate") * TurnSpeed * Time.deltaTime, 0);
 
         // Animations
-        //float MoveVertical = Input.GetAxis("Vertical");
-        //Anim.SetFloat("Vertical", MoveVertical);
-        //float MoveHorizontal = Input.GetAxis("Horizontal");
-        //Anim.SetFloat("Horizontal", MoveHorizontal);
+        float MoveVertical = Input.GetAxis("Vertical");
+        Anim.SetFloat("Walk", MoveVertical);
+        if(Speed == SprintSpeed)
+        {
+            Anim.SetBool("Run", true);
+        }
+        else
+        {
+            Anim.SetBool("Run", false);
+        }
     }
 
     void Attack()
@@ -87,7 +90,11 @@ public class Player : MonoBehaviour
             Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.forward);
             if (Physics.Raycast(ray, out hit))
             {
-                //if (hit.collider.name == "EndBoss")
+                //if (hit.collider.name == "Enemy")
+                //{
+                //    Enemy.GetComponent<Enemy>().Health(5);
+                //}
+                //else if (hit.collider.name == "EndBoss")
                 //{
                 //    EndBoss.GetComponent<Enemy>().Health(5);
                 //}
