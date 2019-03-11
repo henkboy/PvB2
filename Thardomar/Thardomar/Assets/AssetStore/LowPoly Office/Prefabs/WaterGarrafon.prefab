@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4916291209492316}
+  - component: {fileID: 65570178443356552}
   m_Layer: 0
   m_Name: WaterGarrafon
   m_TagString: Untagged
@@ -63,8 +64,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080759092540122}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 25.228, y: 0.017, z: -184.58}
-  m_LocalScale: {x: 0.39699, y: 0.39699, z: 0.39699}
+  m_LocalPosition: {x: 7.062652, y: -2.7862262e-17, z: 12.548047}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4814252487713256}
   m_Father: {fileID: 0}
@@ -116,3 +117,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983149323727374}
   m_Mesh: {fileID: 4300000, guid: 170d54bc69b7f36498f4556c8e269da2, type: 3}
+--- !u!65 &65570178443356552
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1080759092540122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8545046, y: 2.7365022, z: 0.74036694}
+  m_Center: {x: 0.020055294, y: 1.3583357, z: -0.01106596}

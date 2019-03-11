@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 4802117081860190}
   - component: {fileID: 95000572654582614}
   - component: {fileID: 114159375276666114}
+  - component: {fileID: 65418751493996446}
   m_Layer: 0
   m_Name: grandma
   m_TagString: Untagged
@@ -660,15 +661,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274296657605726}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.9015575, z: -0, w: 0.43265933}
+  m_LocalPosition: {x: 15.78, y: -7.147055e-17, z: 29.04}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children:
   - {fileID: 4473357331882484}
   - {fileID: 4094243769645080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 128.727, z: 0}
 --- !u!4 &4803226508374278
 Transform:
   m_ObjectHideFlags: 1
@@ -738,6 +739,18 @@ Transform:
   m_Father: {fileID: 4800115807169844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65418751493996446
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274296657605726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.74399793, y: 1.765393, z: 0.31354287}
+  m_Center: {x: -0.04708158, y: 0.87491107, z: -0.037562136}
 --- !u!95 &95000572654582614
 Animator:
   serializedVersion: 3

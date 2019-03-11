@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4412181434364532}
+  - component: {fileID: 65164530911648268}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -50,8 +51,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333229362547104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.169, y: 0.03, z: -182.31}
-  m_LocalScale: {x: 0.41435, y: 0.41435, z: 0.41435}
+  m_LocalPosition: {x: 6.2006335, y: -2.5319661e-17, z: 11.402962}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4480711849202656}
   m_Father: {fileID: 0}
@@ -115,3 +116,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866625482254020}
   m_Mesh: {fileID: 4300000, guid: c8d2815b4d377894eba525ce9614d206, type: 3}
+--- !u!65 &65164530911648268
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333229362547104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7850377, y: 1.654548, z: 0.7599532}
+  m_Center: {x: -0.010723909, y: 0.78817815, z: 0.023570698}
