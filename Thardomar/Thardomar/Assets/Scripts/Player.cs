@@ -49,6 +49,11 @@ public class Player : MonoBehaviour
     {
         Movement();
         Attack();
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Health(10);
+        }
     }
 
     void Movement()
@@ -110,6 +115,7 @@ public class Player : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             healthSlider.value = MaxHealth;
+            CurrentHealth = MaxHealth;
             //Restart.gameObject.GetComponent<Reset>().CheckProgression();
         }
     }
