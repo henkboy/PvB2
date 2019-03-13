@@ -92,17 +92,17 @@ public class Player : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.forward);
-            Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.forward);
+
             if (Physics.Raycast(ray, out hit))
             {
-                //if (hit.collider.name == "Enemy")
-                //{
-                //    Enemy.GetComponent<Enemy>().Health(5);
-                //}
-                //else if (hit.collider.name == "EndBoss")
-                //{
-                //    EndBoss.GetComponent<Enemy>().Health(5);
-                //}
+                if (hit.collider.name == "Guard")
+                {
+                    hit.collider.gameObject.GetComponent<Enemy>().Health--;
+                }
+                else if (hit.collider.name == "EndBoss")
+                {
+                    
+                }
             }
         }
     }

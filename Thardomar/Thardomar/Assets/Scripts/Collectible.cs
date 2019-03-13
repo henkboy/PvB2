@@ -10,13 +10,11 @@ public class Collectible : MonoBehaviour
     void Start()
     {
         Player = FindObjectOfType<Player>().gameObject;
-       // LvlManager = FindObjectOfType<Saving>().gameObject;
     }
 
     void OnTriggerEnter(Collider Col)
     {
-        //Player.GetComponent<Player>().Collectible++;
-        //LvlManager.gameObject.GetComponent<Saving>().CoinSounds();
-        //gameObject.SetActive(false);
+        Player.GetComponent<Player>().Money++;
+        Destroy(gameObject);
     }
 }
