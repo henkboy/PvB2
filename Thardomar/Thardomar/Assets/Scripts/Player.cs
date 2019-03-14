@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     public float CurrentHealth;
     public float MaxHealth;
     public Slider healthSlider;
-    public GameObject Restart;
+    public float CurrentLevel;
+    public bool TimeStarted = false;
 
     // Collectibles
     public Text MoneyUI;
@@ -112,11 +113,23 @@ public class Player : MonoBehaviour
         CurrentHealth -= amount;
         healthSlider.value = CurrentHealth;
 
-        if (CurrentHealth <= 0)
+        if (CurrentHealth <= 0 && TimeStarted == false)
+        {         
+            StartCoroutine("Dying");
+        }
+    }
+    IEnumerator Dying()
+    {
+        TimeStarted = true;
+        Anim.SetTrigger("Dying");
+        yield return new WaitForSeconds(4);
+        
+        if(CurrentLevel == 1)
         {
             healthSlider.value = MaxHealth;
             CurrentHealth = MaxHealth;
-            //Restart.gameObject.GetComponent<Reset>().CheckProgression();
+            transform.position = new Vector3(-22, 0.6f, 30);
         }
+        TimeStarted = false;
     }
 }

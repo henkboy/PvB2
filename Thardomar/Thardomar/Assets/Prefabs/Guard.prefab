@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333110423819526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.09, y: 1.065, z: 29.47}
+  m_LocalPosition: {x: -25.743517, y: 1.78, z: 26.381044}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4013407856675226}
@@ -358,7 +358,7 @@ MonoBehaviour:
   Health: 3
   Ingot: {fileID: 1316061670224208, guid: 50643a50ec78b6d44ab7a2d27508ffc0, type: 2}
   AggroRange: 5
-  AttackRange: 2
+  AttackRange: 0.75
 --- !u!136 &136923930428925146
 CapsuleCollider:
   m_ObjectHideFlags: 1
