@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-
     private GameObject Player;
     public GameObject Ingot;
 
@@ -20,9 +19,13 @@ public class Enemy : MonoBehaviour
     public Material Blue;
     public Material Red;
 
+    public AudioSource Damaged;
+
     void Start()
     {
         Player = FindObjectOfType<Player>().gameObject;
+        Damaged = GetComponent<AudioSource>();
+        CurrentHealth = Health;
     }
 
     void Update()
@@ -51,6 +54,7 @@ public class Enemy : MonoBehaviour
         {
             CurrentHealth = Health;
             StartCoroutine("Damage");
+            Damaged.Play();
         }
 
         if (Health <= 0)

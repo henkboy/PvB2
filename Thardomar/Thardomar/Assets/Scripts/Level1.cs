@@ -7,6 +7,8 @@ public class Level1 : MonoBehaviour
 {
     private GameObject Player;
     public float Moneys;
+    public GameObject CanType;
+    public GameObject Level3;
 
     // Password
     public bool Letter1 = false;
@@ -34,6 +36,7 @@ public class Level1 : MonoBehaviour
             {
                 Completed = true;
                 Player.transform.position = new Vector3(-17, 0.6f, 30);
+                Level3.GetComponent<Level3>().Lvl1Complete = true;
             }
         }
 
@@ -47,6 +50,11 @@ public class Level1 : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, Player.transform.position - transform.position, out hit, Range))
             {
+                if (CanType.activeInHierarchy == false)
+                {
+                    CanType.SetActive(true);
+                }
+
                 if (Input.anyKeyDown)
                 {
                     if (Input.GetKeyDown(KeyCode.L) && Letter1 == false)
@@ -83,6 +91,7 @@ public class Level1 : MonoBehaviour
                         Guessed = true;
                         Player.transform.position = new Vector3(-22, 0.6f, 30);
                         Player.GetComponent<Player>().CurrentLevel = 1;
+                        CanType.SetActive(false);
                     }
                     else
                     {
@@ -99,6 +108,10 @@ public class Level1 : MonoBehaviour
             }
             else
             {
+                if(CanType.activeInHierarchy == true)
+                {
+                    CanType.SetActive(false);
+                }
                 Letter1 = false;
                 Letter2 = false;
                 Letter3 = false;

@@ -12,8 +12,7 @@ public class Player : MonoBehaviour
     public float TurnSpeed;
 
     // Attacking
-    public GameObject Enemy;
-    public GameObject EndBoss;
+    public GameObject Boss;
 
     // Health
     public float CurrentHealth;
@@ -50,11 +49,6 @@ public class Player : MonoBehaviour
     {
         Movement();
         Attack();
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Health(10);
-        }
     }
 
     void Movement()
@@ -100,9 +94,9 @@ public class Player : MonoBehaviour
                 {
                     hit.collider.gameObject.GetComponent<Enemy>().Health--;
                 }
-                else if (hit.collider.name == "EndBoss")
+                else if (hit.collider.name == "Boss")
                 {
-                    
+                    hit.collider.gameObject.GetComponent<Boss>().Health--;
                 }
             }
         }
@@ -129,6 +123,20 @@ public class Player : MonoBehaviour
             healthSlider.value = MaxHealth;
             CurrentHealth = MaxHealth;
             transform.position = new Vector3(-22, 0.6f, 30);
+        }
+        if (CurrentLevel == 2)
+        {
+            healthSlider.value = MaxHealth;
+            CurrentHealth = MaxHealth;
+            transform.position = new Vector3(22, 0.6f, 33);
+        }
+        if (CurrentLevel == 3)
+        {
+            healthSlider.value = MaxHealth;
+            CurrentHealth = MaxHealth;
+            transform.position = new Vector3(-1, 0.6f, 18);
+            Boss.GetComponent<Boss>().Health = 10;
+            
         }
         TimeStarted = false;
     }
